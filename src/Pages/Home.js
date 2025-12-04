@@ -3,18 +3,19 @@ import Header from "../Components/Header";
 import Sidebar from '../Components/Sidebar';
 import Alert from "../Components/Alert";
 import Post from "../Components/Post";
+import LoginForm from "../Components/LoginForm";
 const Home = () => {
   const posts = [
     {
       title:" Post title 1",
-      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      description: "Post content 1",
       time: "Today",
       coment_count: "100+",
       shares: "1k+",
     },
     {
       title:" Post title 2",
-      description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+      description: "Post content 2",
 
       time: "Yesterday",
       coment_count: "200+",
@@ -22,7 +23,7 @@ const Home = () => {
     },
     {
       title:" Post title 1",
-      description: "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      description: "Post content 3",
 
       time: "A week ago",
       coment_count: "300+",
@@ -67,39 +68,7 @@ const Home = () => {
         {/* Right Column */}
         <div className="col-sm-3">
           {/* Form */}
-          <div className="panel panel-default">
-            <div className="panel-heading">
-              <h3 className="panel-title">
-                <span className="glyphicon glyphicon-log-in"></span>
-                Log In
-              </h3>
-            </div>
-            <div className="panel-body">
-              <form>
-                <div className="form-group">
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="uid"
-                    name="uid"
-                    placeholder="Username"
-                  />
-                </div>
-                <div className="form-group">
-                  <input
-                    type="password"
-                    className="form-control"
-                    id="pwd"
-                    name="pwd"
-                    placeholder="Password"
-                  />
-                </div>
-                <button type="submit" className="btn btn-default">
-                  Log In
-                </button>
-              </form>
-            </div>
-          </div>
+          <LoginForm />
 
           {/* Progress Bars */}
           <div className="panel panel-default">
