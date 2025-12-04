@@ -1,7 +1,34 @@
 import React from "react";
 import Header from "../Components/Header";
-
+import Sidebar from '../Components/Sidebar';
+import Alert from "../Components/Alert";
+import Post from "../Components/Post";
 const Home = () => {
+  const posts = [
+    {
+      title:" Post title 1",
+      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      time: "Today",
+      coment_count: "100+",
+      shares: "1k+",
+    },
+    {
+      title:" Post title 2",
+      description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+
+      time: "Yesterday",
+      coment_count: "200+",
+      shares: "2k+",
+    },
+    {
+      title:" Post title 1",
+      description: "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+
+      time: "A week ago",
+      coment_count: "300+",
+      shares: "3k+",
+    },
+  ];
   return (
     <>
       {/* Navigation */}
@@ -10,213 +37,29 @@ const Home = () => {
       <div className="container-fluid">
         {/* Left Column */}
         <div className="col-sm-3">
-          {/* List-Group Panel */}
-          <div className="panel panel-default">
-            <div className="panel-heading">
-              <h1 className="panel-title">
-                <span className="glyphicon glyphicon-random"></span> Completely
-                Synergize
-              </h1>
-            </div>
-            <div className="list-group">
-              <a href="#" className="list-group-item">
-                Resource Taxing
-              </a>
-              <a href="#" className="list-group-item">
-                Premier Niche Markets
-              </a>
-              <a href="#" className="list-group-item">
-                Dynamically Innovate
-              </a>
-              <a href="#" className="list-group-item">
-                Objectively Innovate
-              </a>
-              <a href="#" className="list-group-item">
-                Proactively Envisioned
-              </a>
-            </div>
-          </div>
-
-          {/* Text Panel */}
-          <div className="panel panel-default">
-            <div className="panel-heading">
-              <h1 className="panel-title">
-                <span className="glyphicon glyphicon-cog"></span> Dramatically
-                Engage
-              </h1>
-            </div>
-
-            <div className="panel-body">
-              <p>
-                Objectively innovate empowered manufactured products whereas
-                parallel platforms. Holisticly predominate extensible testing
-                procedures for reliable supply chains. Dramatically engage
-                top-line web services vis-a-vis cutting-edge deliverables.
-              </p>
-              <p>
-                <button className="btn btn-default">Engage</button>
-              </p>
-            </div>
-          </div>
-
-          {/* Text Panel */}
-          <div className="panel panel-default">
-            <div className="panel-heading">
-              <h3 className="panel-title">
-                <span className="glyphicon glyphicon-bullhorn"></span>
-                Active Predomination
-              </h3>
-            </div>
-            <div className="panel-body">
-              <p>
-                Proactively envisioned multimedia based expertise and
-                cross-media growth strategies.
-              </p>
-              <div className="btn-group" role="group">
-                <button type="button" className="btn btn-default">
-                  Resource
-                </button>
-                <button type="button" className="btn btn-default">
-                  Envision
-                </button>
-                <button type="button" className="btn btn-default">
-                  Niche
-                </button>
-              </div>
-            </div>
-          </div>
+         <Sidebar  />
         </div>
         {/*/Left Column*/}
 
         {/* Center Column */}
         <div className="col-sm-6">
+          {posts.map(function(post,index){
+            return (
+              <Post
+                key ={index} 
+                title ={post.title} 
+                description = {post.description} 
+                time = {post.time} 
+                coment_count = {post.coment_count} 
+                shares = {post.shares} />
+            );
+          })}
           {/* Alert */}
-          <div className="alert alert-success alert-dismissible" role="alert">
-            <button
-              type="button"
-              className="close"
-              data-dismiss="alert"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <strong>Synergize:</strong> Seamlessly visualize quality
-            intellectual capital!
-          </div>
+          
+          <Alert />
 
           {/* Articles */}
-          <div className="row">
-            <article className="col-xs-12">
-              <h2>Premier Niche Markets</h2>
-              <p>
-                Phosfluorescently engage worldwide methodologies with
-                web-enabled technology. Interactively coordinate proactive
-                e-commerce via process-centric "outside the box" thinking.
-                Completely pursue scalable customer service through sustainable
-                potentialities.
-              </p>
-              <p>
-                <button className="btn btn-default">Read More</button>
-              </p>
-              <p className="pull-right">
-                <span className="label label-default">keyword</span>
-                <span className="label label-default">tag</span>
-                <span className="label label-default">post</span>
-              </p>
-              <ul className="list-inline">
-                <li>
-                  <a href="#">Today</a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span className="glyphicon glyphicon-comment"></span> 2
-                    Comments
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span className="glyphicon glyphicon-share"></span> 8 Shares
-                  </a>
-                </li>
-              </ul>
-            </article>
-          </div>
-          <hr />
-          <div className="row">
-            <article className="col-xs-12">
-              <h2>Proactively Envisioned</h2>
-              <p>
-                Seamlessly visualize quality intellectual capital without
-                superior collaboration and idea-sharing. Holistically
-                pontificate installed base portals after maintainable products.
-                Proactively envisioned multimedia based expertise and
-                cross-media growth strategies.
-              </p>
-              <p>
-                <button className="btn btn-default">Read More</button>
-              </p>
-              <p className="pull-right">
-                <span className="label label-default">keyword</span>
-                <span className="label label-default">tag</span>
-                <span className="label label-default">post</span>
-              </p>
-              <ul className="list-inline">
-                <li>
-                  <a href="#">Yesterday</a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span className="glyphicon glyphicon-comment"></span> 21
-                    Comments
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span className="glyphicon glyphicon-share"></span> 36
-                    Shares
-                  </a>
-                </li>
-              </ul>
-            </article>
-          </div>
-          <hr />
-          <div className="row">
-            <article className="col-xs-12">
-              <h2>Completely Synergize</h2>
-              <p>
-                Completely synergize resource taxing relationships via premier
-                niche markets. Professionally cultivate one-to-one customer
-                service with robust ideas. Dynamically innovate
-                resource-leveling customer service for state of the art customer
-                service.
-              </p>
-              <p>
-                <button className="btn btn-default">Read More</button>
-              </p>
-              <p className="pull-right">
-                <span className="label label-default">keyword</span>
-                <span className="label label-default">tag</span>
-                <span className="label label-default">post</span>
-              </p>
-              <ul className="list-inline">
-                <li>
-                  <a href="#">2 Days Ago</a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span className="glyphicon glyphicon-comment"></span> 12
-                    Comments
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span className="glyphicon glyphicon-share"></span> 18
-                    Shares
-                  </a>
-                </li>
-              </ul>
-            </article>
-          </div>
+          <Post />
           <hr />
         </div>
         {/*/Center Column*/}
