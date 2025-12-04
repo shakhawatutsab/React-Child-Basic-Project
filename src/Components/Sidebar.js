@@ -1,4 +1,5 @@
 import React from 'react'
+import TextPanel from './TextPanel'
 
 const Sidebar = () => {
   return (
@@ -30,27 +31,7 @@ const Sidebar = () => {
             </div>
           </div>
 
-          {/* Text Panel */}
-          <div className="panel panel-default">
-            <div className="panel-heading">
-              <h1 className="panel-title">
-                <span className="glyphicon glyphicon-cog"></span> Dramatically
-                Engage
-              </h1>
-            </div>
-
-            <div className="panel-body">
-              <p>
-                Objectively innovate empowered manufactured products whereas
-                parallel platforms. Holisticly predominate extensible testing
-                procedures for reliable supply chains. Dramatically engage
-                top-line web services vis-a-vis cutting-edge deliverables.
-              </p>
-              <p>
-                <button className="btn btn-default">Engage</button>
-              </p>
-            </div>
-          </div>
+          <TextPanel title="Text panel" description = "Dolor sit amet comit" button_text ="Engage" />
 
           {/* Text Panel */}
           <div className="panel panel-default">
