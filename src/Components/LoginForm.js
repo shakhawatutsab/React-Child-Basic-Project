@@ -1,8 +1,10 @@
 import React from "react";
 import { useState } from 'react';
 
+
 const LoginForm = () => {
     const [email , setEmail] = useState("");
+    const [password , setPassword] = useState("");
         
     const emailOnChange = (e) => {
         setEmail(e.target.value);
@@ -20,7 +22,7 @@ const LoginForm = () => {
             <div className="panel-body">
               <form>
                 <div className="form-group">
-                    <h1>{email}</h1>
+                    {email.includes("@") ? (<div className="alert alert-success">email is invalid</div>) : (<div className="alert alert-danger">email is valid</div>)}
                   <input
                     type="text"
                     className="form-control"
@@ -31,14 +33,17 @@ const LoginForm = () => {
                   />
                 </div>
                 <div className="form-group">
+                  {password.length < 8 ?(<div className="alert alert-danger" > Password is week </div>) : (<div className="alert alert-success">Password is good</div>)}
                   <input
                     type="password"
                     className="form-control"
                     id="pwd"
                     name="pwd"
                     placeholder="Password"
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
+                
                 <button type="submit" className="btn btn-default">
                   Log In
                 </button>
