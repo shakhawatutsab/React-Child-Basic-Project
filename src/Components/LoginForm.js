@@ -5,9 +5,15 @@ import { useState } from 'react';
 const LoginForm = () => {
     const [email , setEmail] = useState("");
     const [password , setPassword] = useState("");
+    const [loginSubmit, setSubmit] = useState(false);
         
     const emailOnChange = (e) => {
         setEmail(e.target.value);
+    };
+
+    const handleLogin = (e) => {
+      e.preventDefault();
+      setSubmit(true);
     };
 
   return (
@@ -22,7 +28,10 @@ const LoginForm = () => {
             <div className="panel-body">
               <form>
                 <div className="form-group">
-                    {email.includes("@") ? (<div className="alert alert-success">email is invalid</div>) : (<div className="alert alert-danger">email is valid</div>)}
+
+                    {loginSubmit && !email.includes("@") && (
+                      <div className="alert alert-danger">Email is invalid</div>
+                        ) }
                   <input
                     type="text"
                     className="form-control"
@@ -33,7 +42,9 @@ const LoginForm = () => {
                   />
                 </div>
                 <div className="form-group">
-                  {password.length < 8 ?(<div className="alert alert-danger" > Password is week </div>) : (<div className="alert alert-success">Password is good</div>)}
+                  {loginSubmit && password.length < 8 && (
+                    <div className="alert alert-danger" > Password is week </div>
+                  )}
                   <input
                     type="password"
                     className="form-control"
@@ -44,7 +55,7 @@ const LoginForm = () => {
                   />
                 </div>
                 
-                <button type="submit" className="btn btn-default">
+                <button type="submit" className="btn btn-default" onClick={handleLogin} >
                   Log In
                 </button>
               </form>
