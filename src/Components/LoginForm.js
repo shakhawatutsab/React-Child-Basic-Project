@@ -9,6 +9,7 @@ const LoginForm = () => {
         
     const emailOnChange = (e) => {
         setEmail(e.target.value);
+        setSubmit(false);
     };
 
     const handleLogin = (e) => {
@@ -51,7 +52,12 @@ const LoginForm = () => {
                     id="pwd"
                     name="pwd"
                     placeholder="Password"
-                    onChange={(e) => setPassword(e.target.value)}
+                    onChange={(e) => {
+                      setPassword(e.target.value);
+                      setSubmit(false);
+
+                    }}
+                    
                   />
                 </div>
                 

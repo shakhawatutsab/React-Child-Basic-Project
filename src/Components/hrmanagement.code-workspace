@@ -1,0 +1,29 @@
+{
+	"folders": [
+		{
+			"name": "hrmanagement",
+			"path": "../../../hrmanagement"
+		},
+		{
+			"name": "routerproject",
+			"path": "../../../routerproject"
+		},
+		{
+			"name": "portal-1",
+			"path": "../../../../../Users/Hp/OneDrive/Downloads/portal-1/portal-1"
+		},
+		{
+			"name": "satner-master",
+			"path": "E:/Html Template/theme-wagaon-html-template/satner-master/satner-master"
+		},
+		{
+			"name": "porfoliorouter",
+			"path": "../../../porfoliorouter"
+		},
+		{
+			"name": "reactchild",
+			"path": "../.."
+		}
+	],
+	"settings": {}
+}
