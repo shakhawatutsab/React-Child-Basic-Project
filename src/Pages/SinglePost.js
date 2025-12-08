@@ -4,11 +4,13 @@ import Sidebar from '../Components/Sidebar';
 import Alert from "../Components/Alert";
 import Post from "../Components/Post";
 import LoginForm from "../Components/LoginForm";
-const Home = () => {
+import { useParams } from "react-router-dom";
+const SinglePost = () => {
+
+  const { id } = useParams();
+
   const posts = [
     {
-      id: 1,
-      slug: "post-title-1",
       title:" Post title 1",
       description: "Post content 1",
       time: "Today",
@@ -16,8 +18,6 @@ const Home = () => {
       shares: "1k+",
     },
     {
-      id: 2,
-      slug: "post-title-2",
       title:" Post title 2",
       description: "Post content 2",
 
@@ -26,8 +26,6 @@ const Home = () => {
       shares: "2k+",
     },
     {
-      id: 3,
-      slug: "post-title-3",
       title:" Post title 1",
       description: "Post content 3",
 
@@ -50,27 +48,9 @@ const Home = () => {
 
         {/* Center Column */}
         <div className="col-sm-6">
-          {posts.map(function(post,index){
-            return (
-              <Post
-                key ={index} 
-                title ={post.title} 
-                description = {post.description} 
-                time = {post.time} 
-                coment_count = {post.coment_count} 
-                shares = {post.shares} 
-                id={post.id}
-                slug={post.slug}
-                />
-                
-            );
-          })}
-          {/* Alert */}
+           <h1>Post Title</h1>
+           <p>Post Content</p>
           
-          <Alert />
-
-          {/* Articles */}
-          <Post />
           <hr />
         </div>
         {/*/Center Column*/}
@@ -342,4 +322,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default SinglePost;

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Post = (props) => {
   return (
@@ -10,7 +11,7 @@ const Post = (props) => {
                 {props.description}
               </p>
               <p>
-                <button className="btn btn-default">Read More</button>
+                <Link to= {"single-post/" + props.id} className="btn btn-default">Read More</Link>
               </p>
               <p className="pull-right">
                 <span className="label label-default">keyword</span>
