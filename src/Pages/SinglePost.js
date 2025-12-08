@@ -11,6 +11,8 @@ const SinglePost = () => {
 
   const posts = [
     {
+      id: 1,
+      slug: "post-title-1",
       title:" Post title 1",
       description: "Post content 1",
       time: "Today",
@@ -18,6 +20,8 @@ const SinglePost = () => {
       shares: "1k+",
     },
     {
+      id: 2,
+      slug: "post-title-2",
       title:" Post title 2",
       description: "Post content 2",
 
@@ -26,6 +30,8 @@ const SinglePost = () => {
       shares: "2k+",
     },
     {
+      id: 3,
+      slug: "post-title-3",
       title:" Post title 1",
       description: "Post content 3",
 
@@ -34,6 +40,7 @@ const SinglePost = () => {
       shares: "3k+",
     },
   ];
+  const SinglePost = posts.find((post) => post.id === parseInt(id));
   return (
     <>
       {/* Navigation */}
@@ -48,8 +55,8 @@ const SinglePost = () => {
 
         {/* Center Column */}
         <div className="col-sm-6">
-           <h1>Post Title</h1>
-           <p>Post Content</p>
+           <h1>{SinglePost.title}</h1>
+           <p>{SinglePost.description}</p>
           
           <hr />
         </div>
